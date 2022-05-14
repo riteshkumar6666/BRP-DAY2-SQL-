@@ -1,0 +1,128 @@
+mysql> show tables;
++---------------+
+| Tables_in_brp |
++---------------+
+| user          |
++---------------+
+1 row in set (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| address_book       |
+| addressbook1       |
+| brp                |
+| brp101             |
+| brp_db             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| student            |
+| student1           |
+| student2           |
+| student3           |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> use brp;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_brp |
++---------------+
+| animals       |
+| user          |
++---------------+
+2 rows in set (0.00 sec)
+
+mysql> desc animals;
++-------+----------+------+-----+---------+----------------+
+| Field | Type     | Null | Key | Default | Extra          |
++-------+----------+------+-----+---------+----------------+
+| id    | int      | NO   | PRI | NULL    | auto_increment |
+| name  | char(40) | NO   |     | NULL    |                |
++-------+----------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from animals;
+Empty set (0.01 sec)
+
+mysql> INSERT INTO Animals(name)
+    -> VALUES ("TIGER"),("LION"),("WOLF"),("DOGE");
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from animals;
++----+-------+
+| id | name  |
++----+-------+
+|  1 | TIGER |
+|  2 | LION  |
+|  3 | WOLF  |
+|  4 | DOGE  |
++----+-------+
+
+------------------------------------------------------------------------------------------------------------------------
+ show databases;
++--------------------+
+| Database           |
++--------------------+
+| address_book       |
+| addressbook1       |
+| brp                |
+| brp101             |
+| brp_db             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| student            |
+| student1           |
+| student2           |
+| student3           |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> use brp;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_brp |
++---------------+
+| animals       |
+| shirts        |
+| user          |
++---------------+
+3 rows in set (0.00 sec)
+
+mysql> desc shirts;
++-------+------------------------------------------+------+-----+---------+----------------+
+| Field | Type                                     | Null | Key | Default | Extra          |
++-------+------------------------------------------+------+-----+---------+----------------+
+| id    | int                                      | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(35)                              | YES  |     | NULL    |                |
+| size  | enum('small','medium','large','x-large') | YES  |     | NULL    |                |
++-------+------------------------------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from shirts;
++----+--------------+---------+
+| id | name         | size    |
++----+--------------+---------+
+|  1 | t-shirt      | medium  |
+|  2 | casual-shirt | x-large |
+|  3 | formal-shirt | large   |
+|  4 | polo-shirt   | small   |
++----+--------------+---------+
+4 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
